@@ -58,6 +58,7 @@ int main()
         erasing = false;
     });
 
+    /*
     // Add 2 wind waves
     WindManager wind(to<float>(window_width));
     wind.winds.emplace_back(
@@ -70,6 +71,7 @@ int main()
         sf::Vector2f(0.0f, 0.0f),
         sf::Vector2f(3000.0f, 0.0f)
     );
+    */
 
     // Main loop
     const float dt = 1.0f / 60.0f;
@@ -89,7 +91,7 @@ int main()
             solver.objects.remove_if([&](const Particle& p) {return usr::Utils::isInRadius(p, mouse_position, 10.0f);});
         }
         // Update physics
-        wind.update(solver, dt);
+        //wind.update(solver, dt);
         solver.update(dt);
         // Render the scene
         RenderContext& render_context = app.getRenderContext();
